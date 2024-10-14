@@ -1,0 +1,188 @@
+:root{
+    --primary-color : #7354EA;
+    --primary-dark : #5d39cf;
+    --primary-light : #8782C6;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+body{
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+}
+.invisible{
+   display: none !important;
+}
+.shake-btns{
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+    
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+.tic-tac-game{
+    height: 600px;
+    width: 600px;
+    font-size: 0.8em;
+    text-transform: capitalize;
+    color: white;
+    text-align: center;
+    
+}
+.tic-tac-game .turn-select{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.tic-tac-game .turn-select .team-x a,
+.tic-tac-game .turn-select .team-o a{
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+    background-color: rgba(255, 255, 255, 0.51);
+    color: var(--primary-color);
+    outline: 0;
+    border: none;
+    font-size: 2em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 10px 25px;
+    
+}
+.tic-tac-game .turn-select .team-x a:hover,
+.tic-tac-game .turn-select .team-o a:hover{
+    background-color: var(--primary-dark);
+    color: white;
+}
+.the-game{
+
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.the-game .squares{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 245px;
+    flex-wrap: wrap;
+    border: 2px solid var(--primary-dark);
+    border-radius: 10px;
+    padding: 5px;
+
+   
+}
+.the-game .square{
+    width: 75px;
+    height: 75px;
+    border: 2px solid var(--primary-dark);
+    cursor: pointer;
+    line-height: 75px;
+  font-size: 1.5em;
+}
+.the-game .square:hover{
+   background-color: var(--primary-dark);
+}
+.the-game .square:first-child,
+.the-game .square:nth-child(3),
+.the-game .square:nth-child(7),
+.the-game .square:nth-child(9)
+{
+    border: none;
+}
+.the-game .square:nth-child(2),
+.the-game .square:nth-child(8)
+{
+    border-top: none;
+    border-bottom: none;
+}
+.the-game .square:nth-child(4),
+.the-game .square:nth-child(6)
+{
+    border-left: none;
+    border-right: none;
+}
+
+.tic-tac-game button{
+    background-color: var(--primary-dark);
+    color: white;
+    outline: none;
+    border: none;
+    padding: 10px;
+    width: 150px;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.tic-tac-game button:hover{
+    background-color: white;
+    color: var(--primary-dark);
+}
+
+.result-alert{
+    background-color: white;
+    position: absolute;
+    width: 300px;
+    padding: 25px;
+    border-radius: 25px;
+    text-transform: capitalize;
+    text-align: center;
+   display: none;
+   
+}
+.overlay{
+  content: "a";
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.9;
+}
+.result-alert p{
+    display: inline-block; 
+}
+.result-alert .winner{
+    background-color: var(--primary-color);
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+.visible{
+    transition: all 1s ease-in-out;
+    display: block;
+    
+}
